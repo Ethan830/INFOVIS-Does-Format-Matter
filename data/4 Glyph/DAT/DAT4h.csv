@@ -1,0 +1,18 @@
+# title: European Airline Hubs - Flight Duration, Departure Bearing, and Passenger Volume
+# table_type: record_table
+# subject: airport operating characteristics
+# unit: mixed
+# record_label: Airport
+# vis_type: airport_vector
+# column_units: Latitude=degrees; Longitude=degrees; Avg Flight Duration (hrs)=hours; Avg Departure Bearing (°)=degrees; Avg Annual Passengers (M)=millions
+Airport,Latitude,Longitude,Avg Flight Duration (hrs),Avg Departure Bearing (°),Avg Annual Passengers (M)
+London Heathrow (LHR),51.47°N,0.45°W,2.6,128°,61.2
+Paris Charles de Gaulle (CDG),49.01°N,2.55°E,2.4,112°,57.8
+Frankfurt (FRA),50.04°N,8.57°E,2.3,118°,48.7
+Amsterdam Schiphol (AMS),52.31°N,4.77°E,2.2,121°,52.1
+Madrid Barajas (MAD),40.47°N,3.56°W,2.8,68°,41.4
+Rome Fiumicino (FCO),41.80°N,12.25°E,2.5,97°,32.6
+Istanbul (IST),41.28°N,28.75°E,3.1,114°,46.9
+Vienna (VIE),48.11°N,16.57°E,2.1,110°,29.3
+Copenhagen (CPH),55.62°N,12.65°E,2.0,132°,27.1
+Warsaw Chopin (WAW),52.17°N,20.97°E,2.2,109°,18.8

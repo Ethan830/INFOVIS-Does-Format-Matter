@@ -1,0 +1,42 @@
+# title: United Airlines Hubs - Flight Duration, Departure Bearing, and Passenger Volume
+# table_type: record_table
+# subject: airport operating characteristics
+# unit: mixed
+# record_label: Airport
+# column_units: Latitude=degrees; Longitude=degrees; Avg Flight Duration (hrs)=hours; Avg Departure Bearing (°)=degrees; Avg Annual Passengers (M)=millions
+Airport,Latitude,Longitude,Avg Flight Duration (hrs),Avg Departure Bearing (°),Avg Annual Passengers (M)
+Atlanta (ATL),33.64°N,-84.43°E,3.6,280°,52.0
+Boise (BOI),43.56°N,-116.22°E,3.4,105°,8.0
+Boston (BOS),42.36°N,-71.01°E,5.9,265°,18.0
+Bozeman (BZN),45.78°N,-111.15°E,2.9,115°,4.0
+Calgary (YYC),51.13°N,-114.01°E,3.8,105°,9.0
+Charlotte (CLT),35.21°N,-80.94°E,3.7,275°,23.0
+Chicago (ORD),41.98°N,-87.91°E,3.8,248°,45.0
+Dallas (DFW),32.90°N,-97.04°E,4.0,272°,38.0
+Denver (DEN),39.86°N,-106.67°E,3.2,110°,36.0
+Detroit (DTW),42.21°N,-83.35°E,4.3,255°,17.0
+El Paso (ELP),31.81°N,-106.38°E,3.1,272°,5.0
+Fargo (FAR),46.92°N,-96.81°E,2.8,120°,3.0
+Houston (IAH),29.99°N,-95.34°E,4.1,275°,32.0
+Jackson Hole (JAC),43.60°N,-110.74°E,2.8,118°,3.0
+Kansas City (MCI),39.30°N,-94.71°E,3.5,255°,9.0
+Los Angeles (LAX),33.94°N,-118.41°E,5.6,62°,42.0
+Miami (MIA),25.80°N,-80.29°E,4.4,295°,30.0
+Minneapolis (MSP),44.88°N,-93.22°E,3.9,258°,19.0
+Montreal (YUL),45.47°N,-73.74°E,5.1,265°,12.0
+Nashville (BNA),36.12°N,-86.68°E,3.3,258°,10.0
+New Orleans (MSY),29.99°N,-90.26°E,3.4,285°,11.0
+Newark (EWR),40.69°N,-74.17°E,6.1,268°,35.0
+Omaha (OMA),41.30°N,-95.89°E,3.3,248°,6.0
+Orlando (MCO),28.43°N,-81.31°E,4.2,305°,20.0
+Philadelphia (PHL),39.87°N,-75.24°E,5.2,268°,16.0
+Phoenix (PHX),33.44°N,-112.01°E,3.9,82°,21.0
+Portland (PDX),45.59°N,-122.60°E,4.7,112°,11.0
+Salt Lake City (SLC),40.79°N,-111.98°E,3.7,88°,13.0
+San Francisco (SFO),37.62°N,-122.38°E,5.2,70°,28.0
+Seattle (SEA),47.45°N,-122.31°E,4.9,118°,24.0
+St. Louis (STL),38.75°N,-90.37°E,3.5,252°,12.0
+Toronto (YYZ),43.68°N,-79.63°E,4.2,258°,16.0
+Vancouver (YVR),49.19°N,-123.18°E,4.6,110°,14.0
+Washington (IAD),38.95°N,-77.46°E,5.8,270°,22.0
+Winnipeg (YWG),49.91°N,-97.24°E,3.6,115°,7.0

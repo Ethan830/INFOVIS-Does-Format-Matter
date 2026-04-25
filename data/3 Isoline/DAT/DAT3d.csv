@@ -1,0 +1,13 @@
+# title: Annual Snowfall Across the Alps
+# table_type: spatial_grid
+# subject: annual snowfall
+# unit: centimetres (cm)
+# row_axis_name: latitude
+# column_axis_name: longitude
+Lat (°N),5°E,7°E,9°E,11°E,13°E,15°E
+47.5°N,82,96,118,135,126,104
+46.8°N,94,128,176,214,189,142
+46.1°N,101,149,228,296,241,167
+45.4°N,89,133,205,258,219,153
+44.7°N,66,92,134,171,149,108
+44.0°N,41,56,79,96,84,61

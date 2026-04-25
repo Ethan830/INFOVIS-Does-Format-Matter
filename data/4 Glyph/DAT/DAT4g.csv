@@ -1,0 +1,14 @@
+# title: Ocean Surface Currents Through a Narrow Strait
+# table_type: vector_grid
+# subject: surface current field
+# unit: metres per second (m/s)
+# row_axis_name: latitude
+# column_axis_name: longitude
+# cell_components: U,V,Spd
+Lat (°N),32°E,33°E,34°E,35°E,36°E,37°E
+42°N,"U:0.4;V:0.1;Spd:0.4","U:0.6;V:0.1;Spd:0.6","U:0.9;V:0.2;Spd:0.9","U:1.1;V:0.2;Spd:1.1","U:0.8;V:0.1;Spd:0.8","U:0.5;V:0.1;Spd:0.5"
+41°N,"U:0.6;V:0.1;Spd:0.6","U:1.2;V:0.2;Spd:1.2","U:2.1;V:0.2;Spd:2.1","U:2.8;V:0.3;Spd:2.8","U:1.9;V:0.2;Spd:1.9","U:0.8;V:0.1;Spd:0.8"
+40°N,"U:0.8;V:0.1;Spd:0.8","U:1.8;V:0.2;Spd:1.8","U:3.4;V:0.3;Spd:3.4","U:4.7;V:0.4;Spd:4.7","U:3.1;V:0.3;Spd:3.1","U:1.2;V:0.1;Spd:1.2"
+39°N,"U:0.7;V:0.0;Spd:0.7","U:1.5;V:0.1;Spd:1.5","U:2.8;V:0.2;Spd:2.8","U:3.9;V:0.3;Spd:3.9","U:2.6;V:0.2;Spd:2.6","U:1.0;V:0.1;Spd:1.0"
+38°N,"U:0.5;V:0.0;Spd:0.5","U:0.9;V:0.1;Spd:0.9","U:1.6;V:0.2;Spd:1.6","U:2.2;V:0.2;Spd:2.2","U:1.5;V:0.1;Spd:1.5","U:0.7;V:0.1;Spd:0.7"
+37°N,"U:0.3;V:0.0;Spd:0.3","U:0.5;V:0.1;Spd:0.5","U:0.8;V:0.1;Spd:0.8","U:1.0;V:0.1;Spd:1.0","U:0.7;V:0.1;Spd:0.7","U:0.4;V:0.0;Spd:0.4"

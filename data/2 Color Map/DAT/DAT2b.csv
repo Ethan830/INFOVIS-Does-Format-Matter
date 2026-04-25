@@ -1,0 +1,13 @@
+# title: Regional Seismic Hazard Map
+# table_type: spatial_grid
+# subject: peak ground acceleration
+# unit: g
+# row_axis_name: north-south coordinate
+# column_axis_name: west-east coordinate
+N↔S \ W↔E,0,2,4,6,8,10
+10,0.04,0.08,0.13,0.07,0.05,0.04
+8,0.07,0.42,0.89,0.39,0.58,0.07
+6,0.08,0.44,0.78,0.75,0.29,0.05
+4,0.15,0.71,0.27,0.84,0.39,0.04
+2,0.11,0.47,0.40,0.55,0.22,0.05
+0,0.04,0.06,0.07,0.08,0.05,0.04

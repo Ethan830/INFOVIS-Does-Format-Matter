@@ -1,0 +1,14 @@
+# title: Monsoon Low-Level Jet over the Somali Coast
+# table_type: vector_grid
+# subject: wind field
+# unit: metres per second (m/s)
+# row_axis_name: latitude
+# column_axis_name: longitude
+# cell_components: U,V,Spd
+Lat (°N),44°E,46°E,48°E,50°E,52°E,54°E
+16°N,"U:6.8;V:1.1;Spd:6.9","U:8.2;V:1.3;Spd:8.3","U:9.6;V:1.4;Spd:9.7","U:10.8;V:1.5;Spd:10.9","U:9.1;V:1.2;Spd:9.2","U:7.4;V:1.0;Spd:7.5"
+14°N,"U:8.4;V:1.0;Spd:8.5","U:10.9;V:1.2;Spd:11.0","U:13.6;V:1.4;Spd:13.7","U:15.2;V:1.5;Spd:15.3","U:12.8;V:1.3;Spd:12.9","U:9.6;V:1.1;Spd:9.7"
+12°N,"U:9.1;V:0.8;Spd:9.1","U:12.4;V:1.0;Spd:12.4","U:16.8;V:1.2;Spd:16.8","U:18.9;V:1.3;Spd:18.9","U:15.4;V:1.1;Spd:15.4","U:11.2;V:0.9;Spd:11.2"
+10°N,"U:8.3;V:0.5;Spd:8.3","U:11.5;V:0.7;Spd:11.5","U:15.1;V:0.8;Spd:15.1","U:17.0;V:0.9;Spd:17.0","U:13.6;V:0.7;Spd:13.6","U:10.0;V:0.6;Spd:10.0"
+8°N,"U:6.7;V:0.3;Spd:6.7","U:8.9;V:0.4;Spd:8.9","U:11.6;V:0.5;Spd:11.6","U:12.9;V:0.6;Spd:12.9","U:10.4;V:0.4;Spd:10.4","U:7.8;V:0.3;Spd:7.8"
+6°N,"U:4.9;V:0.2;Spd:4.9","U:6.2;V:0.3;Spd:6.2","U:7.8;V:0.3;Spd:7.8","U:8.7;V:0.4;Spd:8.7","U:7.1;V:0.3;Spd:7.1","U:5.6;V:0.2;Spd:5.6"

@@ -1,0 +1,18 @@
+# title: Major Shipping Routes from Selected Indian Ocean Ports
+# table_type: record_table
+# subject: shipping route characteristics
+# unit: mixed
+# record_label: Port
+# vis_type: airport_vector
+# column_units: Latitude=degrees; Longitude=degrees; Avg Route Length (km)=kilometres; Avg Departure Bearing (°)=degrees; Annual Cargo Volume (Mt)=million tonnes
+Port,Latitude,Longitude,Avg Route Length (km),Avg Departure Bearing (°),Annual Cargo Volume (Mt)
+Mumbai,19.08°N,72.88°E,2840,236°,62.5
+Mundra,22.74°N,69.71°E,3190,228°,71.4
+Colombo,6.93°N,79.85°E,3560,244°,52.8
+Chennai,13.08°N,80.27°E,2910,132°,48.1
+Cochin,9.97°N,76.27°E,3380,248°,37.6
+Salalah,17.02°N,54.09°E,4020,119°,29.7
+Mombasa,4.04°S,39.67°E,2670,54°,34.2
+Durban,29.88°S,31.02°E,3810,72°,41.9
+Fremantle,32.05°S,115.74°E,4360,304°,27.5
+Singapore,1.29°N,103.85°E,3250,266°,79.8

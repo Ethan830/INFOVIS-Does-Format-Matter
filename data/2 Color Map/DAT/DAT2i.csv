@@ -1,0 +1,13 @@
+# title: Airborne Pollen Concentration Across a Valley System
+# table_type: spatial_grid
+# subject: pollen concentration
+# unit: grains per cubic metre
+# row_axis_name: latitude
+# column_axis_name: longitude
+Lat (°N),118°E,120°E,122°E,124°E,126°E,128°E
+42°N,42,48,61,73,66,54
+40°N,38,46,72,108,91,58
+38°N,31,43,84,146,117,64
+36°N,27,39,79,132,104,59
+34°N,25,33,58,89,76,47
+32°N,22,28,41,57,49,35

@@ -1,0 +1,18 @@
+# title: Urban Noise Exposure at Major Intersections in Central Tokyo
+# table_type: record_table
+# subject: noise exposure
+# unit: decibels (dB)
+# record_label: Location
+# vis_type: geo_point_contour
+# measure_column: Noise (dB)
+Location,Longitude (°E),Latitude (°N),Noise (dB),Category
+Shinjuku,139.70,35.69,88,Dangerous
+Shibuya,139.70,35.66,91,Dangerous
+Ikebukuro,139.71,35.73,84,Dangerous
+Tokyo Station,139.77,35.68,82,Dangerous
+Ueno,139.78,35.71,79,Very Loud
+Akihabara,139.77,35.70,81,Dangerous
+Ginza,139.76,35.67,77,Very Loud
+Roppongi,139.73,35.66,86,Dangerous
+Shinagawa,139.74,35.63,74,Very Loud
+Otemachi,139.76,35.69,80,Dangerous

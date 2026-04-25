@@ -1,0 +1,13 @@
+# title: Peak Wind Gust Climatology Across Coastal Europe
+# table_type: spatial_grid
+# subject: peak wind gust
+# unit: metres per second (m/s)
+# row_axis_name: latitude
+# column_axis_name: longitude
+Lat (°N),10°W,0°,10°E,20°E,30°E,40°E
+60°N,24.1,22.8,20.7,18.9,17.2,16.1
+55°N,22.7,21.3,19.9,18.2,16.8,15.7
+50°N,20.4,19.2,18.1,16.9,15.8,15.0
+45°N,18.8,17.9,16.8,15.9,15.1,14.4
+40°N,17.5,16.8,15.9,15.1,14.5,13.9
+35°N,16.9,16.1,15.3,14.6,14.1,13.6

@@ -1,0 +1,15 @@
+# title: Largest Interstate Relocation Flow from Each Australian State
+# table_type: record_table
+# subject: relocation flow
+# unit: persons
+# record_label: Origin State
+# vis_type: state_migration_flow
+Origin State,Top Destination,Migration Volume
+NSW,QLD,84215
+VIC,QLD,79148
+QLD,NSW,56327
+SA,VIC,28491
+WA,VIC,23984
+TAS,VIC,17652
+ACT,NSW,19437
+NT,QLD,15268

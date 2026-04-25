@@ -1,0 +1,18 @@
+# title: Bay Area PM2.5 Concentration During Wildfire Event
+# table_type: record_table
+# subject: PM2.5 concentration
+# unit: micrograms per cubic metre (µg/m³)
+# record_label: Location
+Location,Longitude (°W),Latitude (°N),PM2.5 (µg/m³),AQI Category
+Vallejo,-122.25,38.1,185.4,Unhealthy
+Concord,-122.03,37.97,172.8,Unhealthy
+Richmond,-122.34,37.93,164.2,Unhealthy
+Berkeley,-122.27,37.87,158.5,Unhealthy
+Oakland,-122.27,37.8,145.1,Unhealthy for Sensitive
+San Francisco,-122.41,37.77,132.7,Unhealthy for Sensitive
+Hayward,-122.08,37.66,128.3,Unhealthy for Sensitive
+San Mateo,-122.32,37.56,115.6,Unhealthy for Sensitive
+Fremont,-121.98,37.54,108.4,Unhealthy for Sensitive
+Palo Alto,-122.14,37.44,95.2,Moderate
+San Jose,-121.88,37.33,88.7,Moderate
+Los Gatos,-121.98,37.22,74.5,Moderate

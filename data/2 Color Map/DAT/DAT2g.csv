@@ -1,0 +1,13 @@
+# title: Urban Heat Island Intensity Across a Metropolitan Region
+# table_type: spatial_grid
+# subject: urban heat island intensity
+# unit: degrees Celsius (°C)
+# row_axis_name: north-south coordinate
+# column_axis_name: west-east coordinate
+N↔S \ W↔E,0,2,4,6,8,10
+10,1.2,1.4,1.7,1.9,1.6,1.3
+8,1.5,2.1,2.9,3.4,2.7,1.8
+6,1.8,2.8,4.3,5.6,4.1,2.4
+4,1.7,2.6,4.8,6.3,4.5,2.5
+2,1.4,2.0,3.1,3.9,3.0,1.9
+0,1.1,1.4,1.9,2.2,1.8,1.3

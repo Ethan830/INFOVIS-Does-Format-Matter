@@ -1,0 +1,13 @@
+# title: Soil Moisture Across a Monsoon-Affected Plain
+# table_type: spatial_grid
+# subject: soil moisture
+# unit: volumetric water content (%)
+# row_axis_name: north-south coordinate
+# column_axis_name: west-east coordinate
+N↔S \ W↔E,0,2,4,6,8,10
+10,18.2,19.4,21.7,24.5,26.1,27.3
+8,17.8,19.1,23.6,29.8,31.5,28.4
+6,16.9,18.7,24.2,34.9,36.3,30.1
+4,15.8,17.9,22.4,31.1,32.7,27.8
+2,14.9,16.8,19.7,24.6,25.9,23.3
+0,14.1,15.6,17.4,19.8,20.6,19.1

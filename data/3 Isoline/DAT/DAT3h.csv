@@ -1,0 +1,13 @@
+# title: Annual Precipitation Across Patagonia
+# table_type: spatial_grid
+# subject: annual precipitation
+# unit: millimetres (mm)
+# row_axis_name: latitude
+# column_axis_name: longitude
+Lat (°S),74°W,72°W,70°W,68°W,66°W,64°W
+40°S,2860,2140,1380,860,540,370
+43°S,3040,2280,1460,910,570,390
+46°S,3180,2410,1530,940,590,405
+49°S,2950,2210,1410,875,548,382
+52°S,2620,1960,1260,790,505,358
+55°S,2140,1640,1080,705,468,336

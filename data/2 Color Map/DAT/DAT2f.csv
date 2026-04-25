@@ -1,0 +1,13 @@
+# title: Solar Irradiance Across North Africa
+# table_type: spatial_grid
+# subject: solar irradiance
+# unit: watts per square metre (W/m²)
+# row_axis_name: latitude
+# column_axis_name: longitude
+Lat (°N),10°W,0°,10°E,20°E,30°E,40°E
+35°N,248,251,254,256,258,260
+30°N,262,266,269,272,274,276
+25°N,278,282,286,289,291,293
+20°N,287,291,295,298,300,302
+15°N,281,285,289,292,294,296
+10°N,268,272,276,279,281,283

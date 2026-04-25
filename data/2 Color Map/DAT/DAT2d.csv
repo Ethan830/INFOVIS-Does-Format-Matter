@@ -1,0 +1,13 @@
+# title: Sea Surface Temperature Across the Arabian Sea
+# table_type: spatial_grid
+# subject: sea surface temperature
+# unit: degrees Celsius (°C)
+# row_axis_name: latitude
+# column_axis_name: longitude
+Lat (°N),60°E,64°E,68°E,72°E,76°E,80°E
+24°N,27.4,27.6,27.8,28.1,28.4,28.6
+20°N,27.8,28.0,28.3,28.7,29.0,29.2
+16°N,28.2,28.5,28.9,29.4,29.8,30.1
+12°N,28.6,28.9,29.4,30.0,30.5,30.8
+8°N,28.8,29.2,29.7,30.3,30.8,31.1
+4°N,28.7,29.1,29.6,30.1,30.6,30.9

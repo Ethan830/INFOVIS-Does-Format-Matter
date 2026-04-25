@@ -1,0 +1,18 @@
+# title: Surface Nitrate Concentration Across a Lake Network
+# table_type: record_table
+# subject: nitrate concentration
+# unit: milligrams per litre (mg/L)
+# record_label: Sampling Site
+# vis_type: geo_point_contour
+# measure_column: Nitrate (mg/L)
+Sampling Site,Longitude (°E),Latitude (°N),Nitrate (mg/L),Status
+North Inlet,12.14,47.68,0.62,Low
+West Basin,12.02,47.61,0.95,Low
+Central Channel,12.19,47.58,1.44,Moderate
+South Marsh,12.26,47.49,2.18,Moderate
+East Reach,12.37,47.55,3.62,Elevated
+Industrial Outlet,12.45,47.51,5.91,High
+Lower Narrows,12.33,47.44,2.84,Moderate
+Reed Delta,12.18,47.42,1.77,Moderate
+Outer Lake,12.06,47.48,1.08,Low
+Southern Outlet,12.29,47.36,1.26,Low

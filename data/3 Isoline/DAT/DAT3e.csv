@@ -1,0 +1,18 @@
+# title: Ground-Level Ozone Concentration at Southern California Monitoring Sites
+# table_type: record_table
+# subject: ground-level ozone concentration
+# unit: parts per billion (ppb)
+# record_label: Location
+# vis_type: geo_point_contour
+# measure_column: Ozone (ppb)
+Location,Longitude (°W),Latitude (°N),Ozone (ppb),Category
+Santa Barbara,-119.70,34.42,41,Moderate
+Ventura,-119.29,34.28,48,Moderate
+Los Angeles,-118.24,34.05,67,Unhealthy for Sensitive
+Pasadena,-118.14,34.15,72,Unhealthy for Sensitive
+Riverside,-117.40,33.95,89,Unhealthy
+San Bernardino,-117.29,34.11,94,Unhealthy
+Anaheim,-117.91,33.84,63,Unhealthy for Sensitive
+Long Beach,-118.19,33.77,58,Moderate
+Palm Springs,-116.54,33.83,76,Unhealthy for Sensitive
+Oceanside,-117.38,33.20,46,Moderate

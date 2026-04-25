@@ -1,0 +1,18 @@
+# title: PM10 Concentration Along an Industrial Corridor
+# table_type: record_table
+# subject: PM10 concentration
+# unit: micrograms per cubic metre (µg/m³)
+# record_label: Location
+# vis_type: geo_point_contour
+# measure_column: PM10 (µg/m³)
+Location,Longitude (°E),Latitude (°N),PM10 (µg/m³),Air Quality
+North Gate,77.02,28.82,94,Poor
+Refinery Junction,77.08,28.77,132,Very Poor
+Steel Plant East,77.15,28.73,168,Severe
+Power Station South,77.20,28.68,181,Severe
+Freight Yard,77.27,28.64,154,Very Poor
+Canal Road,77.34,28.60,126,Very Poor
+South Terminal,77.40,28.55,102,Poor
+Logistics Hub,77.46,28.50,118,Very Poor
+Outer Checkpost,77.53,28.46,86,Poor
+Rural Fringe,77.60,28.42,61,Moderate

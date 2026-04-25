@@ -1,0 +1,13 @@
+# title: Terrain Elevation Map
+# table_type: spatial_grid
+# subject: terrain elevation
+# unit: metres (m)
+# row_axis_name: north-south coordinate
+# column_axis_name: west-east coordinate
+N→S \ W→E,0,2,4,6,8,10
+10,2403,2426,2429,2411,2424,2414
+8,2420,2926,3187,2768,2825,2600
+6,2434,2729,3685,3660,3169,2729
+4,2431,2561,2803,3105,3138,2679
+2,2416,2465,2569,2743,2783,2545
+0,2402,2409,2428,2453,2461,2427

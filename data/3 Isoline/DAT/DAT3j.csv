@@ -1,0 +1,13 @@
+# title: Nighttime Light Intensity Across a Peninsula Region
+# table_type: spatial_grid
+# subject: nighttime light intensity
+# unit: radiance (nW/cm²/sr)
+# row_axis_name: latitude
+# column_axis_name: longitude
+Lat (°N),126°E,127°E,128°E,129°E,130°E,131°E
+39°N,4.2,7.8,15.6,21.3,12.1,5.4
+38°N,5.1,11.4,28.7,36.9,19.8,7.6
+37°N,6.3,16.8,44.2,58.6,24.9,8.9
+36°N,4.8,13.6,32.5,41.4,18.3,6.7
+35°N,3.7,9.4,21.8,27.5,13.2,5.1
+34°N,2.9,6.8,14.1,17.6,9.2,3.8

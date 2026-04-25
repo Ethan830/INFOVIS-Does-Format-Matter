@@ -1,0 +1,17 @@
+# title: Largest Commuter Migration Flow from Each Metropolitan Area
+# table_type: record_table
+# subject: commuter migration flow
+# unit: persons
+# record_label: Origin State
+# vis_type: state_migration_flow
+Origin State,Top Destination,Migration Volume
+CA,NV,92410
+NY,NJ,88135
+TX,OK,64782
+FL,GA,58944
+IL,IN,56328
+PA,NJ,54107
+VA,MD,51763
+WA,OR,49488
+MA,NH,47211
+AZ,CA,45892

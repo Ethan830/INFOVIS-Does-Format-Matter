@@ -93,15 +93,24 @@ def judge_accuracy(model_answer, ground_truth):
 
 results_log = []
 
-for ds in QUESTIONS:
-    group_num = ds['id'][0]
-    file_id = ds['id'].lower()
+# Mapping ID prefix to full folder name
+FOLDER_MAP = {
+    "1": "1 Line Graph",
+    "2": "2 Color Map",
+    "3": "3 Isoline",
+    "4": "4 Glyph"
+}
 
-    # We now only need paths for images and tables
-    # Paragraphs are handled via the PARAGRAPHS dictionary
+for ds in QUESTIONS:
+    group_num = ds['id'][0]  # '1', '2', '3', or '4'
+    folder_name = FOLDER_MAP.get(group_num)
+    file_id = ds['id']       # '1A', '1B', etc. (Keeping uppercase for new files)
+
+    # Updated paths based on your VS Code sidebar:
+    # data / [Folder Name] / [MODALITY_SUBFOLDER] / [MODALITY_PREFIX][ID].[EXT]
     modality_files = {
-        "rendered image": f"data/vis{group_num}/{file_id}.png",
-        "data table": f"data/dat{group_num}/{file_id}.csv"
+        "rendered image": f"data/{folder_name}/VIS/VIS{file_id}.png",
+        "data table": f"data/{folder_name}/DAT/DAT{file_id}.csv"
     }
 
     for mod_name in ["rendered image", "data table", "paragraph"]:
@@ -112,11 +121,12 @@ for ds in QUESTIONS:
                 with open(modality_files[mod_name], 'r', encoding='utf-8') as f:
                     content_to_send = f.read()
             elif mod_name == "paragraph":
-                # PULL DIRECTLY FROM STRING DICTIONARY
+                # Assuming you are still using the PAR dictionary import
                 content_to_send = PAR.get(ds['id'], "Paragraph content missing.")
                 
         except FileNotFoundError:
-            print(f"Skipping: {modality_files.get(mod_name)} not found.")
+            # Helpful debug message to see exactly where it's looking
+            print(f"Skipping: File not found at {modality_files.get(mod_name)}")
             continue
 
         for q_id, q_text in ds["questions"]:
