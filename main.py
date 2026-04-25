@@ -12,7 +12,7 @@ from data.par import PAR
 
 # --- 1. API CONFIGURATION (2026 STANDARDS) ---
 # Hardcode keys or use os.environ.get("KEY_NAME")
-OPENAI_KEY = "YOUR_OPENAI_KEY"
+OPENAI_KEY = "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"
 CLAUDE_KEY = "YOUR_CLAUDE_KEY"
 GEMINI_KEY = "AIzaSyDGFBcq30pVc7vd6U-aU-jChJsdQ2wFW0Y"
 
@@ -135,26 +135,30 @@ for ds in QUESTIONS:
                 #"Claude Opus 4.7": call_claude_opus_4_7,
                 "Gemini 3.1 Flash Lite": call_gemini_flash_lite
             }
-
             for llm_name, api_func in models.items():
                 print(f"Running: {llm_name} | Dataset {ds['id']} | {mod_name} | {q_id}")
                 
                 try:
-                    # Step 1: Query the Model
+                    # 1. Prompt LLM
                     sys_prompt = SYSTEM_PROMPT_TEMPLATE.format(modality=ds['type'])
                     full_query = f"{sys_prompt}\n\nQuestion: {q_text}"
                     raw_response = api_func(full_query, content_to_send, mod_name)
                     
-                    # Step 2: Extract Answer and Confidence
+                    # MANDATORY DELAY #1: Stay under 15 RPM
+                    time.sleep(5) 
+
+                    # 2. Extract & Judge
                     parsed = extract_json(raw_response)
                     ans = parsed.get('answer', raw_response) if parsed else raw_response
                     conf = parsed.get('confidence', 0) if parsed else 0
                     
-                    # Step 3: Judge Accuracy
                     truth = ds["ground_truth"][q_id]
                     is_correct = judge_accuracy(ans, truth)
+
+                    # MANDATORY DELAY #2: Judge call counts toward quota too
+                    time.sleep(5) 
                     
-                    # Step 4: Log Results
+                    # 3. Log results...
                     results_log.append({
                         "Dataset_ID": ds["id"],
                         "LLM": llm_name,
@@ -166,8 +170,11 @@ for ds in QUESTIONS:
                     })
                     
                 except Exception as e:
-                    print(f"Failure on {llm_name}: {str(e)}")
-                    time.sleep(2) # Rate limit backoff
+                    if "429" in str(e):
+                        print("Rate limit hit! Cooling down for 60 seconds...")
+                        time.sleep(60) # Full reset if we hit the wall
+                    else:
+                        print(f"Failure on {llm_name}: {str(e)}")
 
 # --- 7. POST-PROCESSING & ANALYSIS ---
 
