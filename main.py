@@ -25,9 +25,10 @@ genai.configure(api_key=GEMINI_KEY)
 #         print(f"Model Name: {m.name}")
 
 # --- 3. PROMPT TEMPLATES ---
-SYSTEM_PROMPT_TEMPLATE = """You are being shown a {modality} representing continuous data. 
-Answer the following question based only on the information presented. Do not use any outside knowledge. 
-After your answer, rate your confidence that your answer is correct as a percentage from 0 to 100.
+SYSTEM_PROMPT_TEMPLATE = """You are being shown a {modality}  representing continuous data that has been fabricated.
+Answer the following question based only on the information presented. Do not use any outside knowledge.
+After your answer, rate your confidence that your answer is correct as a percentage from 0% to 100%,
+where 0% means you are completely guessing and 100% means you are completely certain. Use intermediate values to express partial confidence. 
 Format your response as a JSON object with keys: 'answer' (string) and 'confidence' (integer)."""
 
 # --- 4. UTILITY & API WRAPPERS ---
@@ -131,8 +132,8 @@ for ds in QUESTIONS:
 
         for q_id, q_text in ds["questions"]:
             models = {
-                #"GPT-5.4": call_gpt_5_4,
-                #"Claude Opus 4.7": call_claude_opus_4_7,
+                # "GPT-5.4": call_gpt_5_4,
+                # "Claude Opus 4.7": call_claude_opus_4_7,
                 "Gemini 3.1 Flash Lite": call_gemini_flash_lite
             }
             for llm_name, api_func in models.items():
@@ -190,7 +191,7 @@ df['Brier_Score'] = ((df['Confidence'] / 100) - df['Accuracy'])**2
 df['Is_ECR'] = df['Question_ID'].str.startswith('ECR')
 
 # Save to CSV for your paper
-df.to_csv("visualization_literacy_results.csv", index=False)
+df.to_csv("results.csv", index=False)
 
 # Final Summary Printout
 print("\n--- EXPERIMENT SUMMARY ---")
