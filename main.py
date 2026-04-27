@@ -17,7 +17,7 @@ OPENAI_KEY = "sk-proj-06ZSMxIKAJeO_-6SFYaRZoCHUVO0gz5wOxs9hNae2fR937DbluljKNlGKM
 CLAUDE_KEY = "YOUR_CLAUDE_KEY"
 GEMINI_KEY = "AIzaSyDGFBcq30pVc7vd6U-aU-jChJsdQ2wFW0Y"
 
-openai_client = OpenAI(api_key=os.environ["OPENAI_API_KEY"]) #OpenAI(api_key=OPENAI_KEY) replaced
+openai_client = OpenAI(api_key=OPENAI_KEY)
 anthropic_client = Anthropic(api_key=CLAUDE_KEY)
 genai.configure(api_key=GEMINI_KEY)
 
@@ -169,7 +169,7 @@ for ds in QUESTIONS:
 
         for q_id, q_text in ds["questions"]:
             models = {
-                "GPT-5.4": lambda prompt, content, modality: call_openai_model(
+                "GPT-5.4": lambda prompt, content, modality: call_gpt_5_4(
                     prompt, content, modality, model="gpt-5.4"
                 ),
                 # "Claude Opus 4.7": call_claude_opus_4_7,
