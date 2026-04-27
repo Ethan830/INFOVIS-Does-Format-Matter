@@ -15,7 +15,7 @@ from data.par import PAR
 # Hardcode keys or use os.environ.get("KEY_NAME")
 OPENAI_KEY = "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"
 CLAUDE_KEY = "YOUR_CLAUDE_KEY"
-GEMINI_KEY = "AIzaSyDGFBcq30pVc7vd6U-aU-jChJsdQ2wFW0Y"
+GEMINI_KEY = "AIzaSyAy4FjWEZHZTWX6dU6-OQ9tX7zyMisF_60"
 
 openai_client = OpenAI(api_key=OPENAI_KEY)
 anthropic_client = Anthropic(api_key=CLAUDE_KEY)
@@ -134,21 +134,23 @@ results_log = []
 # Mapping ID prefix to full folder name
 FOLDER_MAP = {
     "1": "1 Line Graph",
-    "2": "2 Color Map",
-    "3": "3 Isoline",
-    "4": "4 Glyph"
+    "2": "2 Color Map"
+    #"3": "3 Isoline",
+    #"4": "4 Glyph"
 }
 
 for ds in QUESTIONS:
     group_num = ds['id'][0]  # '1', '2', '3', or '4'
+    if group_num not in ["1", "2"]:
+        continue
     folder_name = FOLDER_MAP.get(group_num)
     file_id = ds['id']       # '1A', '1B', etc. (Keeping uppercase for new files)
 
     # Updated paths based on your VS Code sidebar:
     # data / [Folder Name] / [MODALITY_SUBFOLDER] / [MODALITY_PREFIX][ID].[EXT]
     modality_files = {
-        "rendered image": f"data/{folder_name}/VIS/VIS{file_id}.png",
-        "data table": f"data/{folder_name}/DAT/DAT{file_id}.csv"
+        "rendered image": f"data/{folder_name}/VIS/VIS{file_id.lower()}.png",
+        "data table": f"data/{folder_name}/DAT/DAT{file_id.lower()}.csv"
     }
 
     for mod_name in ["rendered image", "data table", "paragraph"]:
@@ -167,11 +169,14 @@ for ds in QUESTIONS:
             print(f"Skipping: File not found at {modality_files.get(mod_name)}")
             continue
         
-        
-        models = { 
-                "GPT-5.4": lambda prompt, content, modality: call_gpt_5_4(
-                    prompt, content, modality, model="gpt-5.4"
-                ),
+        # models = { 
+        #         "GPT-5.4": lambda prompt, content, modality: call_gpt_5_4(
+        #             prompt, content, modality, model="gpt-5.4"
+        #         ),
+
+        for q_id, q_text in ds["questions"]:
+            models = {
+                #"GPT-5.4": call_gpt_5_4,
                 # "Claude Opus 4.7": call_claude_opus_4_7,
                 "Gemini 3.1 Flash Lite": call_gemini_flash_lite
         }
@@ -194,8 +199,9 @@ for ds in QUESTIONS:
                     ans = parsed.get('answer', raw_response) if parsed else raw_response
                     conf = parsed.get('confidence', 0) if parsed else 0
                     
-                    truth = ds["ground_truth"][q_id]
-                    is_correct = judge_accuracy(ans, truth)
+                    # truth = ds["ground_truth"][q_id]
+                    # is_correct = call_with_retry(judge_accuracy, ans, truth)
+                    is_correct = None
 
                     # MANDATORY DELAY #2: Judge call counts toward quota too
                     time.sleep(5) 
@@ -212,11 +218,8 @@ for ds in QUESTIONS:
                     })
                     
                 except Exception as e:
-                    if "429" in str(e):
-                        print("Rate limit hit! Cooling down for 60 seconds...")
-                        time.sleep(60) # Full reset if we hit the wall
-                    else:
-                        print(f"Failure on {llm_name}: {str(e)}")
+                    print(f"CRITICAL ERROR on {ds['id']}: {e}")
+                    continue
 
 # --- 7. POST-PROCESSING & ANALYSIS ---
 
