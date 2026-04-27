@@ -169,7 +169,9 @@ for ds in QUESTIONS:
 
         for q_id, q_text in ds["questions"]:
             models = {
-                # "GPT-5.4": call_gpt_5_4,
+                "GPT-5.4": lambda prompt, content, modality: call_openai_model(
+                    prompt, content, modality, model="gpt-5.4"
+                ),
                 # "Claude Opus 4.7": call_claude_opus_4_7,
                 "Gemini 3.1 Flash Lite": call_gemini_flash_lite
             }
