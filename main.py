@@ -68,8 +68,8 @@ def call_gpt_5_4(prompt, content, modality, model="gpt-5.4"):
                         },
                     ],
                 }
-            ],
-            text={"format": {"type": "json_object"}},
+            ]
+            #text={"format": {"type": "json_object"}},
         )
     else:
         response = openai_client.responses.create(
