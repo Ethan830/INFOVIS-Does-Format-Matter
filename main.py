@@ -166,15 +166,17 @@ for ds in QUESTIONS:
             # Helpful debug message to see exactly where it's looking
             print(f"Skipping: File not found at {modality_files.get(mod_name)}")
             continue
-
-        for q_id, q_text in ds["questions"]:
-            models = {
+        
+        
+        models = { 
                 "GPT-5.4": lambda prompt, content, modality: call_gpt_5_4(
                     prompt, content, modality, model="gpt-5.4"
                 ),
                 # "Claude Opus 4.7": call_claude_opus_4_7,
                 "Gemini 3.1 Flash Lite": call_gemini_flash_lite
-            }
+        }
+        for q_id, q_text in ds["questions"]:
+            
             for llm_name, api_func in models.items():
                 print(f"Running: {llm_name} | Dataset {ds['id']} | {mod_name} | {q_id}")
                 
