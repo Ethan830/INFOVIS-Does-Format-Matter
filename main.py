@@ -180,7 +180,7 @@ for ds in QUESTIONS:
                 
                 try:
                     # 1. Prompt LLM
-                    sys_prompt = SYSTEM_PROMPT_TEMPLATE.format(modality=ds['type'])
+                    sys_prompt = SYSTEM_PROMPT_TEMPLATE.format(modality=mod_name) #replace modality=ds['type']
                     full_query = f"{sys_prompt}\n\nQuestion: {q_text}"
                     raw_response = api_func(full_query, content_to_send, mod_name)
                     
