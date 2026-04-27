@@ -12,7 +12,7 @@ from data.par import PAR
 
 # --- 1. API CONFIGURATION (2026 STANDARDS) ---
 # Hardcode keys or use os.environ.get("KEY_NAME")
-OPENAI_KEY = "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"
+OPENAI_KEY = "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"
 CLAUDE_KEY = "YOUR_CLAUDE_KEY"
 GEMINI_KEY = "AIzaSyDGFBcq30pVc7vd6U-aU-jChJsdQ2wFW0Y"
 
