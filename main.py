@@ -4,6 +4,7 @@ import base64
 import re
 import time
 import google.generativeai as genai
+import os 
 from anthropic import Anthropic
 from openai import OpenAI
 
@@ -16,7 +17,7 @@ OPENAI_KEY = "sk-proj-06ZSMxIKAJeO_-6SFYaRZoCHUVO0gz5wOxs9hNae2fR937DbluljKNlGKM
 CLAUDE_KEY = "YOUR_CLAUDE_KEY"
 GEMINI_KEY = "AIzaSyDGFBcq30pVc7vd6U-aU-jChJsdQ2wFW0Y"
 
-openai_client = OpenAI(api_key=OPENAI_KEY)
+openai_client = OpenAI(api_key=os.environ["OPENAI_API_KEY"]) #OpenAI(api_key=OPENAI_KEY) replaced
 anthropic_client = Anthropic(api_key=CLAUDE_KEY)
 genai.configure(api_key=GEMINI_KEY)
 
@@ -44,14 +45,50 @@ def extract_json(text):
     except:
         return None
 
-def call_gpt_5_4(prompt, content, modality):
-    messages = [{"role": "user", "content": [{"type": "text", "text": prompt}]}]
+#def call_gpt_5_4(prompt, content, modality): replaced with following
+    #messages = [{"role": "user", "content": [{"type": "text", "text": prompt}]}]
+    #if modality == "rendered image":
+        #messages[0]["content"].append({"type": "image_url", "image_url": {"url": f"data:image/png;base64,{content}"}})
+    #else:
+        #messages[0]["content"][0]["text"] += f"\n\nData:\n{content}"
+    #response = openai_client.chat.completions.create(model="gpt-5.4", messages=messages, response_format={"type": "json_object"})
+    #return response.choices[0].message.content
+def call_gpt_5_4(prompt, content, modality, model="gpt-5.4"):
     if modality == "rendered image":
-        messages[0]["content"].append({"type": "image_url", "image_url": {"url": f"data:image/png;base64,{content}"}})
+        response = openai_client.responses.create(
+            model=model,
+            input=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "input_text", "text": prompt},
+                        {
+                            "type": "input_image",
+                            "image_url": f"data:image/png;base64,{content}",
+                        },
+                    ],
+                }
+            ],
+            text={"format": {"type": "json_object"}},
+        )
     else:
-        messages[0]["content"][0]["text"] += f"\n\nData:\n{content}"
-    response = openai_client.chat.completions.create(model="gpt-5.4", messages=messages, response_format={"type": "json_object"})
-    return response.choices[0].message.content
+        response = openai_client.responses.create(
+            model=model,
+            input=[
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "input_text",
+                            "text": f"{prompt}\n\nData:\n{content}",
+                        }
+                    ],
+                }
+            ],
+            text={"format": {"type": "json_object"}},
+        )
+
+    return response.output_text
 
 def call_claude_opus_4_7(prompt, content, modality):
     msg_content = [{"type": "text", "text": prompt}]
