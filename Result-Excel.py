@@ -1,9 +1,5 @@
 import pandas as pd
-from pathlib import Path
 
-# -----------------------------
-# Input files
-# -----------------------------
 input_files = {
     "Claude": "CLAUDE_results_1-4.csv",
     "GPT": "GPTresults1-4.csv",
@@ -12,9 +8,6 @@ input_files = {
 
 output_excel = "confidence_pivot_ordered_1A_to_4J.xlsx"
 
-# -----------------------------
-# Configuration
-# -----------------------------
 llm_order = ["Claude", "GPT", "Gemini"]
 
 modality_order = [
@@ -26,13 +19,19 @@ modality_order = [
 dataset_order = [
     f"{number}{letter}"
     for number in range(1, 5)
-    for letter in list("ABCDEFGHIJ")
+    for letter in "ABCDEFGHIJ"
 ]
 
-# -----------------------------
-# Helper functions
-# -----------------------------
-def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
+question_order = [
+    "Q1",
+    "ECR_1a",
+    "Q2",
+    "ECR_1b",
+    "Q3",
+    "ECR_1c",
+]
+
+def normalize_columns(df):
     rename_map = {
         "Dataset ID": "Dataset_ID",
         "DatasetID": "Dataset_ID",
@@ -54,6 +53,7 @@ def normalize_columns(df: pd.DataFrame) -> pd.DataFrame:
     ]
 
     missing = [col for col in required_cols if col not in df.columns]
+
     if missing:
         raise ValueError(f"Missing columns: {missing}")
 
@@ -94,16 +94,6 @@ def normalize_modality(value):
 
 
 def normalize_confidence(value):
-    """
-    Converts confidence values into Excel percentage decimals.
-
-    Examples:
-        "95%"  -> 0.95
-        "95"   -> 0.95
-        95     -> 0.95
-        0.95   -> 0.95
-        "0.95" -> 0.95
-    """
     if pd.isna(value):
         return pd.NA
 
@@ -112,7 +102,6 @@ def normalize_confidence(value):
     if value == "":
         return pd.NA
 
-    # Remove percent sign if present
     value = value.replace("%", "").strip()
 
     try:
@@ -120,16 +109,12 @@ def normalize_confidence(value):
     except ValueError:
         return pd.NA
 
-    # If value is over 1, treat it as a whole-number percentage
     if number > 1:
         number = number / 100
 
     return number
 
 
-# -----------------------------
-# Load and combine CSVs
-# -----------------------------
 all_dfs = []
 
 for llm_name, file_path in input_files.items():
@@ -139,17 +124,14 @@ for llm_name, file_path in input_files.items():
     df["LLM"] = llm_name
     df["Dataset_ID"] = df["Dataset_ID"].apply(clean_dataset_id)
     df["Modality"] = df["Modality"].apply(normalize_modality)
-
-    # Normalize confidence before pivoting
     df["Confidence"] = df["Confidence"].apply(normalize_confidence)
+
+    df = df[df["Question_ID"].isin(question_order)]
 
     all_dfs.append(df)
 
 combined = pd.concat(all_dfs, ignore_index=True)
 
-# -----------------------------
-# Pivot confidence scores
-# -----------------------------
 pivot = combined.pivot_table(
     index=["Dataset_ID", "LLM", "Modality"],
     columns="Question_ID",
@@ -159,28 +141,16 @@ pivot = combined.pivot_table(
 
 pivot.columns.name = None
 
-question_cols = [
-    col for col in pivot.columns
-    if col not in ["Dataset_ID", "LLM", "Modality"]
-]
-
-pivot = pivot.rename(
-    columns={col: f"Confidence_Q{col}" for col in question_cols}
-)
-
-# -----------------------------
-# Build required row order
-# -----------------------------
 ordered_rows = []
 
 for dataset in dataset_order:
     for llm in llm_order:
         for short_modality, full_modality in modality_order:
             ordered_rows.append({
+                "Row_Label": f"{short_modality}-{dataset} {llm}",
                 "Dataset_ID": dataset,
                 "LLM": llm,
                 "Modality": full_modality,
-                "Row_Label": f"{short_modality}-{dataset} {llm}",
             })
 
 order_df = pd.DataFrame(ordered_rows)
@@ -191,26 +161,18 @@ final_df = order_df.merge(
     how="left"
 )
 
-base_cols = ["Row_Label", "Dataset_ID", "LLM", "Modality"]
-confidence_cols = [
-    col for col in final_df.columns
-    if col.startswith("Confidence_Q")
+confidence_cols = []
+
+for q in question_order:
+    if q in final_df.columns:
+        new_name = f"Confidence_{q}"
+        final_df = final_df.rename(columns={q: new_name})
+        confidence_cols.append(new_name)
+
+final_df = final_df[
+    ["Row_Label", "Dataset_ID", "LLM", "Modality"] + confidence_cols
 ]
 
-def question_sort_key(col):
-    q = col.replace("Confidence_Q", "")
-    try:
-        return int(q)
-    except ValueError:
-        return q
-
-confidence_cols = sorted(confidence_cols, key=question_sort_key)
-
-final_df = final_df[base_cols + confidence_cols]
-
-# -----------------------------
-# Missing confidence report
-# -----------------------------
 missing_records = []
 
 for _, row in final_df.iterrows():
@@ -226,9 +188,6 @@ for _, row in final_df.iterrows():
 
 missing_df = pd.DataFrame(missing_records)
 
-# -----------------------------
-# Summary sheet
-# -----------------------------
 summary_df = pd.DataFrame({
     "Metric": [
         "Number of datasets",
@@ -250,23 +209,17 @@ summary_df = pd.DataFrame({
     ]
 })
 
-# -----------------------------
-# Write Excel file with percentage formatting
-# -----------------------------
 with pd.ExcelWriter(output_excel, engine="openpyxl") as writer:
     final_df.to_excel(writer, sheet_name="Confidence Pivot", index=False)
     missing_df.to_excel(writer, sheet_name="Missing Confidence", index=False)
     summary_df.to_excel(writer, sheet_name="Summary", index=False)
     combined.to_excel(writer, sheet_name="Raw Inputs", index=False)
 
-    workbook = writer.book
     ws = writer.sheets["Confidence Pivot"]
 
-    # Apply Excel percentage format to confidence columns
     for col_idx, col_name in enumerate(final_df.columns, start=1):
-        if col_name.startswith("Confidence_Q"):
+        if col_name.startswith("Confidence_"):
             for row_idx in range(2, len(final_df) + 2):
-                cell = ws.cell(row=row_idx, column=col_idx)
-                cell.number_format = "0%"
+                ws.cell(row=row_idx, column=col_idx).number_format = "0%"
 
 print(f"Saved Excel file to: {output_excel}")
