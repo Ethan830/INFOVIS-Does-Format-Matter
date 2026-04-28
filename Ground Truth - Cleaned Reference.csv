@@ -1,0 +1,241 @@
+Dataset,Question_Number,Ground_Truth
+1A,Q1,~0.63
+1A,ECR-1a,No
+1A,Q2,"All five states show a consistent upward trend, with growth accelerating sharply after 1950. Uttar Pradesh shows the steepest acceleration."
+1A,ECR-1b,No
+1A,Q3,"Uttar Pradesh is the clear outlier — its post-1950 growth rate far exceeds all other states. Kerala is a secondary outlier on the low end, showing notably flatter growth."
+1A,ECR-1c,No
+1B,Q1,-6.8C
+1B,ECR-1a,No
+1B,Q2,"All five cities follow the same seasonal pattern — temperatures are negative or near zero in winter (Dec–Feb), rise steadily through spring, peak in July, then decline symmetrically through autumn. Reykjavik consistently records the lowest summer highs while the other four cities are more closely grouped."
+1B,ECR-1b,No
+1B,Q3,"Reykjavik is a consistent outlier on the low end — its summer temperatures are notably cooler than the other four cities. Copenhagen is a mild outlier in December, remaining above freezing (0.4°C) while all others drop below zero."
+1B,ECR-1c,No
+1C,Q1,196
+1C,ECR-1a,No
+1C,Q2,"All five cities follow a bimodal daily pattern — AQI dips to its lowest in the early morning hours (03:00–05:00), rises to a morning peak around 08:00–09:00, dips slightly through midday, then rises again to an evening peak around 17:00–18:00 before declining overnight. Moscow and Istanbul remain consistently below the WHO threshold of 100 throughout the day. Tashkent, Almaty, and Tehran remain consistently and substantially above it."
+1C,ECR-1b,No
+1C,Q3,"Moscow and Istanbul are clear outliers on the low end — their AQI values remain below or near the WHO threshold of 100 throughout the entire day, while Tashkent, Almaty, and Tehran consistently exceed 100 by a wide margin. Tehran is a mild outlier on the high end, recording the single highest value in the dataset (196 at 18:00) and showing the steepest evening peak."
+1C,ECR-1c,No
+1D,Q1,67.8
+1D,ECR-1a,No.
+1D,Q2,"Steady increase (monotonically), overall upward for all countries"
+1D,ECR-1b,No
+1D,Q3,Brazil
+1D,ECR-1c,No
+1E,Q1,~83.6%
+1E,ECR-1a,No
+1E,Q2,Steady decrease (monotonic decrease) for all reservoir
+1E,ECR-1b,No
+1E,Q3,No strong outliers.
+1E,ECR-1c,No
+1F,Q1,334
+1F,ECR-1a,No
+1F,Q2,"There is a visible disruption around 2020-Q1, especially in clothing and electronics, while grocery remains relatively resilient and continues to grow. Otherwise, mostly gradual increase"
+1F,ECR-1b,No
+1F,Q3,Grocery is the clearest outlier because it stays much higher than the other categories and does not dip in 2020
+1F,ECR-1c,No
+1G,Q1,142
+1G,ECR-1a,No
+1G,Q2,"Lowest in nights and rising through the morning, peak at midday and decrease after late evening"
+1G,ECR-1b,No
+1G,Q3,Not really
+1G,ECR-1c,No
+1H,Q1,67
+1H,ECR-1a,Yes
+1H,Q2,"Strong seasonal cycles, peaking in Jan each year, and troughs in July."
+1H,ECR-1b,No
+1H,Q3,No
+1H,ECR-1c,No
+1I,Q1,4.7
+1I,ECR-1a,Yes
+1I,Q2,Steady upward trend (monotonic increase) over time for all 5 zones
+1I,ECR-1b,No
+1I,Q3,No
+1I,ECR-1c,No
+1J,Q1,201
+1J,ECR-1a,No
+1J,Q2,"Rise to peak around 8:00, then decline"
+1J,ECR-1b,No
+1J,Q3,None
+1J,ECR-1c,No
+2A,Q1,24.7°C
+2A,ECR-1a,No
+2A,Q2,"Temperature increases consistently as latitude increases northward. The equatorial band (0°) records the coolest values at 22.4°C uniformly across all longitudes. Temperatures rise steadily through 6°N (26.0°C), 12°N (29.9–30.0°C), and 24°N (37.4–38.9°C), peaking at 30°N (41.6–41.7°C). The gradient is smooth and consistent across almost all longitude bands with the notable exception of the 18°N, 38°E–45°E region."
+2A,ECR-1b,No
+2A,Q3,"Yes — there is a striking cold anomaly centred around 18°N, 41°E, where the temperature drops to 24.7°C, far below the expected value of approximately 33–34°C for that latitude. This is visible as the deep blue region in the colour map. A secondary, milder cool anomaly exists around 15°N, 20°E in the colour map, though it is less dramatic in the table data."
+2A,ECR-1c,No
+2B,Q1,0.39g
+2B,ECR-1a,No
+2B,Q2,"Seismic hazard is highly concentrated in the central-western portion of the region, peaking around coordinates (4, 8) and (2, 4)–(4, 4), which correspond to the Meridian Fault zone. Values drop sharply toward all edges of the map, with the northern row (N=10), southern row (N=0), and eastern and western edges all recording negligible to low hazard (0.04–0.13g). A secondary hazard concentration exists in the east-central area around (6, 4)–(8, 8), corresponding to the Eastern Rift zone."
+2B,ECR-1b,No
+2B,Q3,"Yes — two cells stand out as local anomalies. The cell at (4, 8) records 0.89g, which is dramatically higher than all adjacent cells in row N=8 (0.42g to the west, 0.39g to the east) and the row above (0.13g at N=10). The cell at (6, 4) records 0.84g, which is notably higher than its neighbours at (4, 4) which records 0.27g — a sharp discontinuity suggesting a localised high-hazard fault intersection. The entire bottom row (N=0) and top row (N=10) are uniformly low, making any elevated reading in those rows anomalous by comparison."
+2B,ECR-1c,No
+2C,Q1,"3,685m"
+2C,ECR-1a,No
+2C,Q2,"Elevation is lowest and highly uniform along all edges of the map, with all border cells recording values close to 2,400m. Elevation rises sharply toward the central and upper-central portion of the region, peaking around coordinates (4, 6) at 3,685m and (6, 4) at 3,105m. The gradient is steep on the western and northern faces of the central massif and more gradual toward the south and east. The summit area visible in the colour map corresponds to the highest concentration of elevated cells in the (2–6, 4–8) zone."
+2C,ECR-1b,No
+2C,Q3,"Yes — the cell at (4, 6) records 3,685m, which is the single highest value in the dataset and represents a sharp local peak relative to its neighbours at (2, 6) which records 2,729m and (6, 6) which records 3,660m. The entire top row (N=10) and bottom row (N=0) are anomalously uniform and low relative to the interior, consistent with a flat peripheral lowland. The cell at (2, 8) records 2,926m, which is notably elevated compared to its western neighbour at (0, 8) recording 2,420m, suggesting a sharp ridgeline running north-south on the western face."
+2C,ECR-1c,No
+2D,Q1,30.5
+2D,ECR-1a,No
+2D,Q2,Temperature generally increases from north to south and from west to east
+2D,ECR-1b,No
+2D,Q3,None
+2D,ECR-1c,No
+2E,Q1,5.9
+2E,ECR-1a,No
+2E,Q2,"Low at outdoor edges and increase sharply toward the center right, with a strong core visible"
+2E,ECR-1b,No
+2E,Q3,"Yes, (4,6)"
+2E,ECR-1c,No
+2F,Q1,298
+2F,ECR-1a,No
+2F,Q2,General rise moving southward from 35°N to 20°N and northward from 10°N to20°N slight increase from west to east.
+2F,ECR-1b,No
+2F,Q3,No
+2F,ECR-1c,No
+2G,Q1,6.3
+2G,ECR-1a,No
+2G,Q2,"Low intensity around edges and increases to center, with a hotspot in the middle"
+2G,ECR-1b,No
+2G,Q3,"Yes, the central hotspot at (4,6)"
+2G,ECR-1c,No
+2H,Q1,36.3
+2H,ECR-1a,No
+2H,Q2,"Lower at southern and western edges and rises to the central/central-eastern portion, where there is a hotspot."
+2H,ECR-1b,No
+2H,Q3,"Yes the hotspot at (6,6) and (6,8)"
+2H,ECR-1c,No
+2I,Q1,146
+2I,ECR-1a,Yes
+2I,Q2,"Low on outer edges, rises to the central eastern area, with a hotspot in the middle-eastern area."
+2I,ECR-1b,No
+2I,Q3,Yes 38°N 12°4
+2I,ECR-1c,No
+2J,Q1,18.1
+2J,ECR-1a,No
+2J,Q2,Peak at Northwest and decline toward the southeast
+2J,ECR-1b,No
+2J,Q3,Yes 60°N 10°W
+2J,ECR-1c,No
+3A,Q1,930 mm
+3A,ECR-1a,No
+3A,Q2,"Precipitation decreases consistently as latitude increases northward. Southern latitudes (34–36°N) record the highest values (1,280–1,450 mm) while northern latitudes (42–43°N) record the lowest (450–630 mm). The gradient is smooth and monotonic across all longitude columns."
+3A,ECR-1b,No
+3A,Q3,"No dramatic outliers exist — the dataset is spatially smooth. However, the 129°E column shows a mild local peak relative to its neighbours at several mid-latitudes, suggesting a subtle eastward precipitation enhancement. No single cell deviates sharply enough to be considered a strong outlier."
+3A,ECR-1c,No
+3B,Q1,86.5 dB
+3B,ECR-1a,No
+3B,Q2,"Noise pollution is not uniformly distributed but forms distinct, highly localized hotspots. The most severe noise (above 85 dB) is concentrated in the central and western urban cores (New Delhi, Patel Nagar, IGI Airport, Gurgaon), while the outer peripheral locations (Rohini, Faridabad, Ghaziabad) record significantly lower levels, creating steep gradients dropping off away from the city centers."
+3B,ECR-1b,No
+3B,Q3,"Yes, New Delhi represents an extreme peak at 95.0 dB, sitting at the center of the largest high-noise cluster. Additionally, Gurgaon (85.1 dB) forms its own distinct, isolated high-noise hotspot in the southwest, separated from the main New Delhi/Patel Nagar cluster by a noticeable dip in the gradient."
+3B,ECR-1c,No
+3C,Q1,158.5 µg/m³
+3C,ECR-1a,No
+3C,Q2,"PM2.5 concentrations are highest in the northern region (Vallejo and Concord) forming a primary pollution peak, and they steadily decrease as one moves south. This creates a continuous, dissipating gradient that reaches its lowest recorded levels in the southernmost locations (San Jose and Los Gatos)."
+3C,ECR-1b,No
+3C,Q3,"The data primarily follows a smooth, continuous dissipation gradient without severe, isolated hotspots in the lower latitudes. Vallejo forms the primary peak (185.4 µg/m³) at the northern boundary, and the pollution plume smoothly diffuses southward without any sudden, disconnected spikes disrupting the regional trend."
+3C,ECR-1c,No
+3D,Q1,296
+3D,ECR-1a,No
+3D,Q2,"Highest in the center of the grid, decreasing outward"
+3D,ECR-1b,No
+3D,Q3,"Yes, 46.1°N 11°E"
+3D,ECR-1c,No
+3E,Q1,94
+3E,ECR-1a,No
+3E,Q2,Lower at the coast and rises toward inland. Peak at San Bernardino
+3E,ECR-1b,No
+3E,Q3,"Yes, San Bernardino"
+3E,ECR-1c,No
+3F,Q1,91
+3F,ECR-1a,Yes
+3F,Q2,Highest near shibuya and shinjuku. Decreasing toward Tokyo and Ueno
+3F,ECR-1b,No
+3F,Q3,"Yes, Shibuya"
+3F,ECR-1c,No
+3G,Q1,5.91
+3G,ECR-1a,No
+3G,Q2,"Low in the eastern side of the lake, and rise sharply to the eastern and southeastern sites"
+3G,ECR-1b,No
+3G,Q3,"Yes, Industrial Outlet"
+3G,ECR-1c,No
+3H,Q1,1530
+3H,ECR-1a,No
+3H,Q2,Highest in the western part and decline moving eastward
+3H,ECR-1b,No
+3H,Q3,"Yes, 46°S 74°W"
+3H,ECR-1c,No
+3I,Q1,181
+3I,ECR-1a,No
+3I,Q2,Rise from north end to Power Station South and decrease to south end
+3I,ECR-1b,No
+3I,Q3,"Yes, Power Station South"
+3I,ECR-1c,No
+3J,Q1,58.6
+3J,ECR-1a,No
+3J,Q2,Low at the edges and increase into a hotspot in the middle of the grid
+3J,ECR-1b,No
+3J,Q3,"Yes, 37°N 129°E"
+3J,ECR-1c,No
+4A,Q1,Newark
+4A,ECR-1a,No
+4A,Q2,"Western coast airports (LAX, SFO, SEA, PDX, YVR) predominantly depart eastward, with bearings clustering between 62°–118°. Eastern coast airports (BOS, EWR, PHL, IAD, YUL) predominantly depart westward, with bearings clustering between 265°–268°. This creates a broadly mirrored pattern — western airports point inward toward the continent, eastern airports point inward toward the continent from the opposite side."
+4A,ECR-1b,No
+4A,Q3,"Yes — several airports stand out. LAX (62°) and SFO (70°) depart notably more northeastward than their regional neighbours PHX (82°) and PDX (112°), suggesting a different dominant route network. Orlando (MCO) at 305° is a notable outlier among southeastern airports, departing predominantly northwestward while its neighbours ATL (280°), MIA (295°), and MSY (285°) all depart more westward. Denver (DEN) at 110° stands out among interior airports as departing eastward rather than toward either coast."
+4A,ECR-1c,No
+4B,Q1,"82,481 to Texas"
+4B,ECR-1a,No
+4B,Q2,"Generally yes — the highest volumes cluster around large states (CA, NY, FL, TX), while smallest volumes belong to low-population states like Vermont, Wyoming, and Alaska"
+4B,ECR-1b,No
+4B,Q3,The Kansas↔Missouri and Missouri↔Kansas mutual pairing is a notable structural outlier
+4B,ECR-1c,No
+4C,Q1,10.0 m/s (the single highest recorded speed in the dataset)
+4C,ECR-1a,No
+4C,Q2,"Wind speed is lowest at the northern and southern peripheries of the domain and peaks strongly in the central region around 10°N, 87.5°E, creating a concentric bull's-eye pattern of increasing speed toward the centre. Wind direction is predominantly eastward (positive U components dominate throughout) with a northward V component that increases toward the centre, consistent with a cyclonic monsoon circulation pattern. At the periphery, winds are weaker and more uniformly eastward. At the centre, winds curve northeastward as the circulation tightens."
+4C,ECR-1b,No
+4C,Q3,"Yes — the cell at 10°N, 87.5°E records 10.0 m/s, which is the single highest value in the entire dataset and stands out as the peak of the central circulation. It is notably higher than its immediate neighbours at 10°N, 85°E (9.5 m/s) and 10°N, 90°E (10.4 m/s — note this is from the raw U/V components; the speed field is smooth but tightly peaked). The northern edge of the domain (25°N) is a collective low-speed anomaly, with all cells recording uniformly low speeds of 3.9–4.3 m/s regardless of longitude, contrasting sharply with the high-speed central band."
+4C,ECR-1c,No
+4D,Q1,79.8
+4D,ECR-1a,No
+4D,Q2,"The ports show substantial variation in both average route length and departure bearing. Most western Indian Ocean and South Asian ports have long routes with bearings clustered toward southwest-to-westward directions, while eastern ports such as Singapore and Fremantle exhibit distinct directional patterns and substantial route lengths."
+4D,ECR-1b,No
+4D,Q3,"Yes, Singapore"
+4D,ECR-1c,No
+4E,Q1,92410 (~90000)
+4E,ECR-1a,Yes
+4E,Q2,Migration concentrate among large adjacent state or nearby-region corridors
+4E,ECR-1b,No
+4E,Q3,"Yes, California to nevada"
+4E,ECR-1c,No
+4F,Q1,7.1
+4F,ECR-1a,No
+4F,Q2,"Wind leaving the center, with increased intensity at the edges."
+4F,ECR-1b,No
+4F,Q3,"Yes, 24°N 132°E"
+4F,ECR-1c,No
+4G,Q1,4.7m/s
+4G,ECR-1a,No
+4G,Q2,"Aligned to the east, with intensity peaking in the middle and weakened at the edges of the grid"
+4G,ECR-1b,No
+4G,Q3,Yes 40°N 35°E
+4G,ECR-1c,No
+4H,Q1,57.8
+4H,ECR-1a,No
+4H,Q2,All point toward southeast
+4H,ECR-1b,No
+4H,Q3,"Yes, Madrid"
+4H,ECR-1c,No
+4I,Q1,84215
+4I,ECR-1a,No
+4I,Q2,"Migration toward NSW, VIC, QLD"
+4I,ECR-1b,No
+4I,Q3,"Yes, NSW and QLD"
+4I,ECR-1c,No
+4J,Q1,18.9
+4J,ECR-1a,No
+4J,Q2,"Toward the east, with high intensity in the middle of the grid"
+4J,ECR-1b,No
+4J,Q3,Yes 12°N 50°E
+4J,ECR-1c,No
