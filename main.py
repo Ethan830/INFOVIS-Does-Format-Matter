@@ -14,8 +14,9 @@ from data.par import PAR
 # --- 1. API CONFIGURATION (2026 STANDARDS) ---
 # Hardcode keys or use os.environ.get("KEY_NAME")
 OPENAI_KEY = "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"
-CLAUDE_KEY = "YOUR_CLAUDE_KEY"
-GEMINI_KEY = "AIzaSyAy4FjWEZHZTWX6dU6-OQ9tX7zyMisF_60"
+CLAUDE_KEY = "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"
+GEMINI_KEY1 = "AIzaSyAy4FjWEZHZTWX6dU6-OQ9tX7zyMisF_60"
+GEMINI_KEY = "AIzaSyD1jTEOQgZN9dGUqcqMXDtDD9fzeolndus"
 
 openai_client = OpenAI(api_key=OPENAI_KEY)
 anthropic_client = Anthropic(api_key=CLAUDE_KEY)
@@ -90,13 +91,13 @@ def call_gpt_5_4(prompt, content, modality, model="gpt-5.4"):
 
     return response.output_text
 
-def call_claude_opus_4_7(prompt, content, modality):
+def call_claude(prompt, content, modality):
     msg_content = [{"type": "text", "text": prompt}]
     if modality == "rendered image":
         msg_content.append({"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": content}})
     else:
         msg_content[0]["text"] += f"\n\nData:\n{content}"
-    response = anthropic_client.messages.create(model="claude-4-7-opus-20260416", max_tokens=2048, messages=[{"role": "user", "content": msg_content}])
+    response = anthropic_client.messages.create(model="claude-sonnet-4-6", max_tokens=2048, messages=[{"role": "user", "content": msg_content}])
     return response.content[0].text
 
 def call_gemini_flash_lite(prompt, content, modality):
@@ -134,17 +135,23 @@ results_log = []
 # Mapping ID prefix to full folder name
 FOLDER_MAP = {
     "1": "1 Line Graph",
-    "2": "2 Color Map"
-    #"3": "3 Isoline",
-    #"4": "4 Glyph"
+    "2": "2 Color Map",
+    "3": "3 Isoline",
+    "4": "4 Glyph"
 }
 
+TARGET_DATASETS = ["2I", "2J", "4I", "4J"]
+
 for ds in QUESTIONS:
-    group_num = ds['id'][0]  # '1', '2', '3', or '4'
-    if group_num not in ["1", "2"]:
+    # group_num = ds['id'][0]  # '1', '2', '3', or '4'
+    file_id = ds['id']
+    if file_id not in TARGET_DATASETS:
         continue
+    group_num = file_id[0]
+    # if group_num not in ["1", "2"]:
+    #     continue
     folder_name = FOLDER_MAP.get(group_num)
-    file_id = ds['id']       # '1A', '1B', etc. (Keeping uppercase for new files)
+    # file_id = ds['id']       # '1A', '1B', etc. (Keeping uppercase for new files)
 
     # Updated paths based on your VS Code sidebar:
     # data / [Folder Name] / [MODALITY_SUBFOLDER] / [MODALITY_PREFIX][ID].[EXT]
@@ -177,8 +184,8 @@ for ds in QUESTIONS:
         for q_id, q_text in ds["questions"]:
             models = {
                 #"GPT-5.4": call_gpt_5_4,
-                # "Claude Opus 4.7": call_claude_opus_4_7,
-                "Gemini 3.1 Flash Lite": call_gemini_flash_lite
+                "Claude": call_claude,
+                # "Gemini 3.1 Flash Lite": call_gemini_flash_lite
         }
         for q_id, q_text in ds["questions"]:
             
@@ -208,13 +215,13 @@ for ds in QUESTIONS:
                     
                     # 3. Log results...
                     results_log.append({
-                        "Dataset_ID": ds["id"],
-                        "LLM": llm_name,
-                        "Modality": mod_name,
-                        "Question_ID": q_id,
+                        "Dataset_ID": str(ds["id"]),
+                        "LLM": str(llm_name),
+                        "Modality": str(mod_name),
+                        "Question_ID": str(q_id),
                         "Accuracy": is_correct,
                         "Confidence": conf,
-                        "Raw_Answer": ans
+                        "Raw_Answer": str(ans).replace('"', '""') 
                     })
                     
                 except Exception as e:
@@ -235,7 +242,7 @@ df['Brier_Score'] = ((df['Confidence'] / 100) - df['Accuracy'])**2
 df['Is_ECR'] = df['Question_ID'].str.startswith('ECR')
 
 # Save to CSV for your paper
-df.to_csv("results.csv", index=False)
+df.to_csv("results12.csv", index=False)
 
 # Final Summary Printout
 print("\n--- EXPERIMENT SUMMARY ---")
