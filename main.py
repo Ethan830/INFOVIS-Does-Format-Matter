@@ -140,7 +140,7 @@ FOLDER_MAP = {
     "4": "4 Glyph"
 }
 
-TARGET_DATASETS = ["2I", "2J", "4I", "4J"]
+TARGET_DATASETS = ["4I", "4J"]
 
 for ds in QUESTIONS:
     # group_num = ds['id'][0]  # '1', '2', '3', or '4'
