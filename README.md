@@ -1,6 +1,6 @@
 # Does Format Matter? Supplementary Materials
 
-This repository contains the data, experimental scripts, and analysis code for our study evaluating Large Language Model (LLM) confidence calibration across diverse visualization modalities.
+This [repository](https://github.com/Ethan830/INFOVIS-Does-Format-Matter.git) contains the data, experimental scripts, and analysis code for our study evaluating Large Language Model (LLM) confidence calibration across diverse visualization modalities.
 
 ## Research Overview
 
