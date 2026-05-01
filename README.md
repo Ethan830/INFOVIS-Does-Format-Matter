@@ -21,6 +21,7 @@ This study investigates whether the cognitive benefits of visual representation 
 
 ### Results and Analysis
 * **results/**: The primary storage directory for raw model outputs and experiment results.
+* **[Results Google Sheets](https://docs.google.com/spreadsheets/d/1V_zxzw-bqGHpESPz517VrZj6eQBSuoGxXUbFOoQlwSM/edit?usp=sharing)**: The primary storage directory for processed data and data analysis.
 * **Result-Excel.py**: A post-processing script that extracts confidence scoring from the results into Excel spreadsheets.
 * **Linear Mixed Effect Model (LMEM)/**: This folder stores LMEM results and **LMEM.py**, the Python script used for LMEM statistical analysis.
 
