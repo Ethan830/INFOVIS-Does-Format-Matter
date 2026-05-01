@@ -23,9 +23,10 @@ This study investigates whether the cognitive benefits of visual representation 
 * **results/**: The primary storage directory for raw model outputs and experiment results.
 * **[Results Google Sheets](https://docs.google.com/spreadsheets/d/1V_zxzw-bqGHpESPz517VrZj6eQBSuoGxXUbFOoQlwSM/edit?usp=sharing)**: The primary storage directory for processed data and data analysis.
 * **Result-Excel.py**: A post-processing script that extracts confidence scoring from the results into Excel spreadsheets.
-* **Linear Mixed Effect Model-1 (LMEM-1)/**: This folder stores LMEM results and **LMEM-1.py**, the Python script used for LMEM statistical analysis. (LMEM on input modality, visualization type, and LLM model)
+* **Linear Mixed Effect Model (LMEM)/**: This folder stores LMEM results and **LMEM.py**, the Python script used for LMEM statistical analysis. 
 * **Linear Fixed Effect Model (LFEM)/**: This folder stores LFEM results and **LFEM.py**, the Python script used for LMEM statistical analysis.
-* **Linear Mixed Effect Model-2 (LMEM-2)/**: This folder stores LMEM results and **LMEM-2.py**, the Python script used for LMEM statistical analysis.
+* **Aggregated Linear Effect Model-2 (LMEM-2)/**: This folder stores LMEM results and **AFELM.py**, the Python script used for AFELM statistical analysis.
+* **VIS- LMEM/**: This folder stores VIS- LMEM results and **VIS-LMEM.py**, the python script used for VIS- LMEM statiscal analysis.
 
 ---
 
