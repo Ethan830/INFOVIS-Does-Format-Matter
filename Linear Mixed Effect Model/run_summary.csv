@@ -1,0 +1,6 @@
+Metric,Value
+Rows in original data,360
+Rows used in analysis,359
+Rows omitted,1
+Brier model type used,Mixed-effects model
+Accuracy model type used,Mixed-effects model
